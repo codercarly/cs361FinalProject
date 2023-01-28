@@ -31,36 +31,41 @@ func PickAnIngredient() {
 	fmt.Println()
 	fmt.Println("***** CHOOSE YOUR MAIN INGREDIENT *****")
 	fmt.Println()
-	fmt.Println("1. Chicken")
-	fmt.Println("2. Beef")
-	fmt.Println("3. Seafood")
-	fmt.Println("4. Vegetable")
-	fmt.Println("5. Dessert")
+	fmt.Println("1. CHICKEN")
+	fmt.Println("2. BEEF")
+	fmt.Println("3. SEAFOOD")
+	fmt.Println("4. VEGETABLE")
+	fmt.Println("5. DESSERT")
 	fmt.Println()
 	fmt.Println("6. EXIT RECIPE BOX")
-	GetUserInput()
 
-	//validInput := true
-	//	for validInput (
-	switch UserInput {
-	case "1":
-		ChooseYourRecipe("Chicken")
-	case "2":
-		ChooseYourRecipe("Beef")
-	case "3":
-		ChooseYourRecipe("Seafood")
-	case "4":
-		ChooseYourRecipe("Vegetable")
-	case "5":
-		ChooseYourRecipe("Dessert")
-	case "6":
-		ExitProgram()
-		//validInput = false
-	default:
-		fmt.Println("Incorrect input, please try again")
-		//validInput = true
+	validInput := true
+	for validInput {
+		GetUserInput()
+		switch UserInput {
+		case "1":
+			ChooseYourRecipe(chicken)
+			RecipeService(chicken)
+		case "2":
+			ChooseYourRecipe(beef)
+			RecipeService(beef)
+		case "3":
+			ChooseYourRecipe(seafood)
+			RecipeService(seafood)
+		case "4":
+			ChooseYourRecipe(vegetable)
+			RecipeService(vegetable)
+		case "5":
+			ChooseYourRecipe(dessert)
+			RecipeService(dessert)
+		case "6":
+			ExitProgram()
+			validInput = false
+		default:
+			fmt.Println("Incorrect input, please try again")
+			validInput = true
+		}
 	}
-	// )
 }
 
 func ChooseYourRecipe(ingredient string) {
@@ -71,8 +76,8 @@ func ChooseYourRecipe(ingredient string) {
 
 func NAVChooseYourRecipe() {
 	fmt.Println()
-	fmt.Println("1. PICK DIFFERENT MAIN INGREDIENT")
-	fmt.Println("2. EXIT RECIPE BOX")
+	fmt.Println("6. PICK DIFFERENT MAIN INGREDIENT")
+	fmt.Println("7. EXIT RECIPE BOX")
 }
 
 func Recipe(recipeName string) {
@@ -81,7 +86,7 @@ func Recipe(recipeName string) {
 	fmt.Println()
 }
 
-func NAVRecipe() {
+func NAVRecipe(mainIngredient string) {
 	fmt.Println()
 	fmt.Println("1. PRINT RECIPE")
 	fmt.Println("2. EMAIL RECIPE")
@@ -90,6 +95,32 @@ func NAVRecipe() {
 	fmt.Println("5. CHOOSE A DIFFERENT RECIPE")
 	fmt.Println("6. PICK DIFFERENT MAIN INGREDIENT")
 	fmt.Println("7. EXIT RECIPE BOX")
+
+	validInput := true
+	for validInput {
+		GetUserInput()
+		switch UserInput {
+		case "1":
+			fmt.Println("TODO: PRINT")
+		case "2":
+			fmt.Println("TODO: EMAIL")
+		case "3":
+			fmt.Println("TODO: DOWNLOAD")
+		case "4":
+			fmt.Println("TODO: CONVERT")
+		case "5":
+			ChooseYourRecipe(mainIngredient)
+			RecipeService(mainIngredient)
+		case "6":
+			PickAnIngredient()
+		case "7":
+			ExitProgram()
+			validInput = false
+		default:
+			fmt.Println("Incorrect input, please try again")
+			validInput = true
+		}
+	}
 }
 
 func GetUserInput() {

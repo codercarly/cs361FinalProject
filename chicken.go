@@ -19,12 +19,36 @@ const (
 )
 
 func ChickenRecipes() {
-
-	//chickenRecipes := [5]string{mushroomChicken, lemonHerbChickenThighs, whiteBeanChickenChili, teriyakiChickenSkewers, marinatedGrilledChicken}
-	fmt.Printf("1. %s", mushroomChicken)
-	fmt.Printf("2. %s", lemonHerbChickenThighs)
-	fmt.Printf("3. %s", whiteBeanChickenChili)
-	fmt.Printf("4. %s", teriyakiChickenSkewers)
-	fmt.Printf("5. %s", marinatedGrilledChicken)
+	fmt.Printf("1. %s\n", mushroomChicken)
+	fmt.Printf("2. %s\n", lemonHerbChickenThighs)
+	fmt.Printf("3. %s\n", whiteBeanChickenChili)
+	fmt.Printf("4. %s\n", teriyakiChickenSkewers)
+	fmt.Printf("5. %s\n", marinatedGrilledChicken)
+	NAVChooseYourRecipe()
 	println()
+	GetUserInput()
+
+	validInput := true
+	for validInput {
+		switch UserInput {
+		case "1":
+			ScrapeRecipe(mushroomChickenURL, mushroomChicken, chicken)
+		case "2":
+			ScrapeRecipe(lemonHerbChickenThighsURL, lemonHerbChickenThighs, chicken)
+		case "3":
+			ScrapeRecipe(whiteBeanChickenChiliURL, whiteBeanChickenChili, chicken)
+		case "4":
+			ScrapeRecipe(teriyakiChickenSkewersURL, teriyakiChickenSkewers, chicken)
+		case "5":
+			ScrapeRecipe(marinatedGrilledChickenURL, marinatedGrilledChicken, chicken)
+		case "6":
+			PickAnIngredient()
+		case "7":
+			ExitProgram()
+			validInput = false
+		default:
+			fmt.Println("Incorrect input, please try again")
+			validInput = true
+		}
+	}
 }
