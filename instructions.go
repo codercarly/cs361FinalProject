@@ -37,7 +37,8 @@ func PickAnIngredient() {
 	fmt.Println("4. VEGETABLE")
 	fmt.Println("5. DESSERT")
 	fmt.Println()
-	fmt.Println("6. EXIT RECIPE BOX")
+	fmt.Println("6. ABOUT RECIPE BOX")
+	fmt.Println("7. EXIT RECIPE BOX")
 
 	validInput := true
 	for validInput {
@@ -59,6 +60,9 @@ func PickAnIngredient() {
 			ChooseYourRecipe(dessert)
 			RecipeService(dessert)
 		case "6":
+			About()
+			PickAnIngredient()
+		case "7":
 			ExitProgram()
 			validInput = false
 		default:
@@ -77,7 +81,8 @@ func ChooseYourRecipe(ingredient string) {
 func NAVChooseYourRecipe() {
 	fmt.Println()
 	fmt.Println("6. PICK DIFFERENT MAIN INGREDIENT")
-	fmt.Println("7. EXIT RECIPE BOX")
+	fmt.Println("7. ABOUT RECIPE BOX")
+	fmt.Println("8. EXIT RECIPE BOX")
 }
 
 func Recipe(recipeName string) {
@@ -94,7 +99,8 @@ func NAVRecipe(mainIngredient string) {
 	fmt.Println("4. CONVERT RECIPE TO METRIC")
 	fmt.Println("5. CHOOSE A DIFFERENT RECIPE")
 	fmt.Println("6. PICK DIFFERENT MAIN INGREDIENT")
-	fmt.Println("7. EXIT RECIPE BOX")
+	fmt.Println("7. ABOUT RECIPE BOX")
+	fmt.Println("8. EXIT RECIPE BOX")
 
 	validInput := true
 	for validInput {
@@ -114,6 +120,9 @@ func NAVRecipe(mainIngredient string) {
 		case "6":
 			PickAnIngredient()
 		case "7":
+			About()
+			NAVRecipe(mainIngredient)
+		case "8":
 			ExitProgram()
 			validInput = false
 		default:

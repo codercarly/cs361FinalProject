@@ -44,6 +44,9 @@ func SeafoodRecipes() {
 		case "6":
 			PickAnIngredient()
 		case "7":
+			About()
+			SeafoodRecipes()
+		case "8":
 			ExitProgram()
 			validInput = false
 		default:
