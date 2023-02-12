@@ -5,11 +5,10 @@ By Carly Coccaro
 ## About
 
 My final project for CS 361 is called The Receipe Box. It's a console application that scrapes recipe data from websites and returns it to the user.
-The application is written in Golang and contains a Python microservice written by my partner, James Cohrs.
 
 ## Partner Communication Contract
 
-The following is a communication contract between myself and my group partner. This contract explains the functionality of a microservice that I have created for his final project. This microservice will be added directly to his console application.
+The following is a communication contract between myself and my partner, James Cohrs. This contract explains the functionality of a microservice that I have created for his final project. This microservice will be added directly to his console application.
 
 This microservice connects to his program via a local socket connection. His application and the microservice will connect to a specified port on the local machine. The microservice will then listen and wait for data to be sent via the port.
 
