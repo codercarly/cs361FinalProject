@@ -1,19 +1,29 @@
 package main
 
+import (
+	"fmt"
+
+	"github.com/TwiN/go-color"
+)
+
 func About() {
+	fmt.Println(color.Green + "----------------------------------------------------------------")
+	fmt.Println("----------------------------------------------------------------" + color.Reset)
+	println(color.Cyan + "ABOUT THE RECIPE BOX (v1.0.1)" + color.Reset)
 	println()
-	println("ABOUT THE RECIPE BOX (v1.0.0)")
+	println("The Recipe Box is a quick way to find, print, and email recipes.")
 	println()
-	println("The Recipe Box is a quick and fast way to find recipes to make for a meal.")
+	println(color.Yellow + "This application needs an active internet connection." + color.Reset)
 	println()
-	println("HOW TO:")
+	println(color.Cyan + "HOW TO:" + color.Reset)
 	println("	* Choose a main ingredient from a list of ingredients.")
-	println("	* Choose a recipe from a list of recipes based on the main ingredient chosen.")
-	println("	* The recipe ingredients and instructions will print to the screen.")
-	println("	* Choose what you want to do with the recipe (print, email, download, or convert).")
+	println("	* Choose a recipe from a list of recipes.")
+	println("	* View recipe and instructions.")
+	println("	* Print, email, and download recipe.")
 	println()
-	println("NAVIGATION:")
-	println("	* All navigation is completed by inputting a numerical value on your keyboard and pressing enter.")
-	println("	* Each step will provide options to navigate backwards (i.e. start over) or exit the application.")
-	println()
+	println(color.Cyan + "NAVIGATION:" + color.Reset)
+	println("	* Select an option by typing a number + enter.")
+	println("	* Each step will provide additional navigation options.")
+	fmt.Println(color.Green + "----------------------------------------------------------------")
+	fmt.Println("----------------------------------------------------------------" + color.Reset)
 }

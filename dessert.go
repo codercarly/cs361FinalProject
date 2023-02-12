@@ -24,7 +24,6 @@ func DessertRecipes() {
 	fmt.Printf("4. %s\n", ketoPeantButterCookies)
 	fmt.Printf("5. %s\n", pineappleWithCinnamon)
 	NAVChooseYourRecipe()
-	println()
 	GetUserInput()
 
 	validInput := true

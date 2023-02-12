@@ -6,6 +6,7 @@ require github.com/kkyr/go-recipe v0.4.0
 
 require (
 	github.com/PuerkitoBio/goquery v1.8.0 // indirect
+	github.com/TwiN/go-color v1.4.0
 	github.com/andybalholm/cascadia v1.3.1 // indirect
 	github.com/piprate/json-gold v0.4.1 // indirect
 	github.com/pquerna/cachecontrol v0.0.0-20180517163645-1555304b9b35 // indirect

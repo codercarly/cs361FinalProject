@@ -25,7 +25,6 @@ func ChickenRecipes() {
 	fmt.Printf("4. %s\n", teriyakiChickenSkewers)
 	fmt.Printf("5. %s\n", marinatedGrilledChicken)
 	NAVChooseYourRecipe()
-	println()
 	GetUserInput()
 
 	validInput := true

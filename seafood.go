@@ -4,28 +4,27 @@ import "fmt"
 
 const (
 	// Seafood Recipe Options
-	crispySkinSalmon   = "Crispy Skin Salmon"
-	teriyakiSalmon     = "Teriyaki Salmon"
-	airFryerShrimp     = "Air Fryer Shrimp"
-	prawnsCoconutCurry = "Prawns in Mild Coconut Curry"
-	salmonBites        = "Salmon Bites"
+	crispySkinSalmon = "Crispy Skin Salmon"
+	teriyakiSalmon   = "Teriyaki Salmon"
+	airFryerShrimp   = "Air Fryer Shrimp"
+	spicySalmon      = "Spicy Salmon"
+	salmonBites      = "Salmon Bites"
 
 	// Seafood Recipe URLs
-	crispySkinSalmonURL   = "https://minimalistbaker.com/crispy-skin-salmon-perfect-every-time/"
-	teriyakiSalmonURL     = "https://www.loveandotherspices.com/air-fryer-teriyaki-salmon/"
-	airFryerShrimpURL     = "https://www.loveandotherspices.com/air-fryer-shrimp/"
-	prawnsCoconutCurryURL = "https://www.loveandotherspices.com/prawns-in-mild-coconut-curry/"
-	salmonBitesURL        = "https://www.loveandotherspices.com/air-fryer-salmon-bites/"
+	crispySkinSalmonURL = "https://minimalistbaker.com/crispy-skin-salmon-perfect-every-time/"
+	teriyakiSalmonURL   = "https://www.loveandotherspices.com/air-fryer-teriyaki-salmon/"
+	airFryerShrimpURL   = "https://www.loveandotherspices.com/air-fryer-shrimp/"
+	spicySalmonURL      = "https://www.loveandotherspices.com/air-fryer-salmon/"
+	salmonBitesURL      = "https://www.loveandotherspices.com/air-fryer-salmon-bites/"
 )
 
 func SeafoodRecipes() {
 	fmt.Printf("1. %s\n", crispySkinSalmon)
 	fmt.Printf("2. %s\n", teriyakiSalmon)
 	fmt.Printf("3. %s\n", airFryerShrimp)
-	fmt.Printf("4. %s\n", prawnsCoconutCurry)
+	fmt.Printf("4. %s\n", spicySalmon)
 	fmt.Printf("5. %s\n", salmonBites)
 	NAVChooseYourRecipe()
-	println()
 	GetUserInput()
 
 	validInput := true
@@ -38,7 +37,7 @@ func SeafoodRecipes() {
 		case "3":
 			ScrapeRecipe(airFryerShrimpURL, airFryerShrimp, seafood)
 		case "4":
-			ScrapeRecipe(prawnsCoconutCurryURL, prawnsCoconutCurry, seafood)
+			ScrapeRecipe(spicySalmonURL, spicySalmon, seafood)
 		case "5":
 			ScrapeRecipe(salmonBitesURL, salmonBites, seafood)
 		case "6":

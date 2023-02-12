@@ -25,7 +25,6 @@ func VegetableRecipes() {
 	fmt.Printf("4. %s\n", eggplantParmesean)
 	fmt.Printf("5. %s\n", chipotleBlackBeanChili)
 	NAVChooseYourRecipe()
-	println()
 	GetUserInput()
 
 	validInput := true
