@@ -8,6 +8,7 @@ PORT = 3610
 while True:
     print("Creating socket connection...")
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         s.bind((HOST, PORT))
         s.listen()
         print("Awaiting txt file data...")
@@ -43,20 +44,18 @@ while True:
                         break
             
             # Create PDF from recipeText
-            print("Setting up PDF ...")
-            print(recipeText)
             pdf = FPDF()
             pdf.set_right_margin(margin=10)
-            pdf.set_font("Arial", size = 12)
+            pdf.add_font('DejaVuSerif', '', 'DejaVuSerifCondensed.ttf', uni=True)
+            pdf.set_font('DejaVuSerif', size = 14)
             pdf.add_page()
             pdf.multi_cell(w=0, h=10, txt = recipeText[:-3], align = 'J')
 
             # We get the user's unique path to their downloads folder
-            userpath = os.path.expanduser("~/Downloads") 
+            userpath = os.path.expanduser("~/Downloads/Recipes") 
 
-            print("Line 56 ...")
             # then save the PDF in the downloads folder
-            pdf.output(f"{userpath}\\{fileName[:-4]}.pdf")
+            pdf.output(f"{userpath}/{fileName[:-4]}.pdf")
 
             # Print complete and send final feedback to main
             print("Saved!")
