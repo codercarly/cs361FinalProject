@@ -6,6 +6,7 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+	"time"
 )
 
 func SendFileToText(rd RecipeData) (string, error) {
@@ -50,6 +51,7 @@ func SendFileToText(rd RecipeData) (string, error) {
 	_, err = fmt.Fprintf(file, "END\n")
 
 	buffer.Flush()
-	fmt.Println("Converting your recipe now...")
+	fmt.Println("Converting your recipe to text now...")
+	time.Sleep(2 * time.Second)
 	return fileName, nil
 }

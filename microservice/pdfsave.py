@@ -43,6 +43,8 @@ while True:
                         break
             
             # Create PDF from recipeText
+            print("Setting up PDF ...")
+            print(recipeText)
             pdf = FPDF()
             pdf.set_right_margin(margin=10)
             pdf.set_font("Arial", size = 12)
@@ -52,6 +54,7 @@ while True:
             # We get the user's unique path to their downloads folder
             userpath = os.path.expanduser("~/Downloads") 
 
+            print("Line 56 ...")
             # then save the PDF in the downloads folder
             pdf.output(f"{userpath}\\{fileName[:-4]}.pdf")
 

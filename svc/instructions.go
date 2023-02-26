@@ -122,7 +122,7 @@ func NAVRecipe(mainIngredient string, recipeData RecipeData) {
 			if err != nil {
 				log.Fatal(err)
 			}
-			m.SendToPDF(fileName)
+			m.CallMicroserviceClient(fileName)
 		case "4":
 			fmt.Println("TODO: CONVERT")
 		case "5":
