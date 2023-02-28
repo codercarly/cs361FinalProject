@@ -99,41 +99,32 @@ func Recipe(recipeName string) {
 
 func NAVRecipe(mainIngredient string, recipeData RecipeData) {
 	fmt.Println()
-	fmt.Println("1. PRINT RECIPE")
-	fmt.Println("2. EMAIL RECIPE")
-	fmt.Println("3. DOWNLOAD RECIPE")
-	fmt.Println("4. CONVERT RECIPE TO METRIC")
-	fmt.Println("5. CHOOSE A DIFFERENT RECIPE")
-	fmt.Println("6. PICK DIFFERENT MAIN INGREDIENT")
-	fmt.Println("7. ABOUT RECIPE BOX")
-	fmt.Println("8. EXIT RECIPE BOX")
+	fmt.Println("1. DOWNLOAD RECIPE")
+	fmt.Println("2. CHOOSE A DIFFERENT RECIPE")
+	fmt.Println("3. PICK DIFFERENT MAIN INGREDIENT")
+	fmt.Println("4. ABOUT RECIPE BOX")
+	fmt.Println("5. EXIT RECIPE BOX")
 
 	validInput := true
 	for validInput {
 		GetUserInput()
 		switch UserInput {
 		case "1":
-			fmt.Println("TODO: PRINT")
-		case "2":
-			fmt.Println("TODO: EMAIL")
-		case "3":
 			fmt.Println("DOWNLOAD")
 			fileName, err := SendFileToText(recipeData)
 			if err != nil {
 				log.Fatal(err)
 			}
 			m.CallMicroserviceClient(fileName)
-		case "4":
-			fmt.Println("TODO: CONVERT")
-		case "5":
+		case "2":
 			ChooseYourRecipe(mainIngredient)
 			RecipeService(mainIngredient)
-		case "6":
+		case "3":
 			PickAnIngredient()
-		case "7":
+		case "4":
 			About()
 			NAVRecipe(mainIngredient, recipeData)
-		case "8":
+		case "5":
 			ExitProgram()
 			validInput = false
 		default:
