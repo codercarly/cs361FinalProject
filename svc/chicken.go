@@ -22,11 +22,11 @@ const (
 )
 
 func ChickenRecipes() {
-	fmt.Printf("1. %s\n", mushroomChicken)
-	fmt.Printf("2. %s\n", lemonHerbChickenThighs)
-	fmt.Printf("3. %s\n", whiteBeanChickenChili)
-	fmt.Printf("4. %s\n", teriyakiChickenSkewers)
-	fmt.Printf("5. %s\n", marinatedGrilledChicken)
+	fmt.Printf("%s %s\n", c.One, mushroomChicken)
+	fmt.Printf("%s %s\n", c.Two, lemonHerbChickenThighs)
+	fmt.Printf("%s %s\n", c.Three, whiteBeanChickenChili)
+	fmt.Printf("%s %s\n", c.Four, teriyakiChickenSkewers)
+	fmt.Printf("%s %s\n", c.Five, marinatedGrilledChicken)
 	NAVChooseYourRecipe()
 	GetUserInput()
 

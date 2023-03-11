@@ -37,14 +37,14 @@ func AppTitleIntro() {
 
 func PickAnIngredient() {
 	fmt.Println(color.Yellow + "***** CHOOSE YOUR MAIN INGREDIENT *****" + color.Reset)
-	fmt.Println("1. CHICKEN")
-	fmt.Println("2. BEEF")
-	fmt.Println("3. SEAFOOD")
-	fmt.Println("4. VEGETABLE")
-	fmt.Println("5. DESSERT")
+	fmt.Printf("%s %s\n", c.One, c.Chicken)
+	fmt.Printf("%s %s\n", c.Two, c.Beef)
+	fmt.Printf("%s %s\n", c.Three, c.Seafood)
+	fmt.Printf("%s %s\n", c.Four, c.Vegetable)
+	fmt.Printf("%s %s\n", c.Five, c.Dessert)
 	fmt.Println()
-	fmt.Println("6. ABOUT RECIPE BOX")
-	fmt.Println("7. EXIT RECIPE BOX")
+	fmt.Printf(color.Green +"%s %s\n", c.Six, c.About)
+	fmt.Printf("%s %s\n" +color.Reset, c.Seven, c.Exit)
 
 	validInput := true
 	for validInput {
@@ -72,7 +72,7 @@ func PickAnIngredient() {
 			ExitProgram()
 			validInput = false
 		default:
-			fmt.Println("Incorrect input, please try again")
+			fmt.Printf("%s", c.Incorrect)
 			validInput = true
 		}
 	}
@@ -86,9 +86,9 @@ func ChooseYourRecipe(ingredient string) {
 
 func NAVChooseYourRecipe() {
 	fmt.Println()
-	fmt.Println("6. PICK DIFFERENT MAIN INGREDIENT")
-	fmt.Println("7. ABOUT RECIPE BOX")
-	fmt.Println("8. EXIT RECIPE BOX")
+	fmt.Printf(color.Green +"%s %s\n", c.Six, c.PickDifferentIng)
+	fmt.Printf("%s %s\n", c.Seven, c.About)
+	fmt.Printf("%s %s\n" + color.Reset, c.Eight, c.Exit)
 }
 
 func Recipe(recipeName string) {
@@ -99,11 +99,11 @@ func Recipe(recipeName string) {
 
 func NAVRecipe(mainIngredient string, recipeData RecipeData) {
 	fmt.Println()
-	fmt.Println("1. DOWNLOAD RECIPE")
-	fmt.Println("2. CHOOSE A DIFFERENT RECIPE")
-	fmt.Println("3. PICK DIFFERENT MAIN INGREDIENT")
-	fmt.Println("4. ABOUT RECIPE BOX")
-	fmt.Println("5. EXIT RECIPE BOX")
+	fmt.Printf(color.Green +"%s %s\n", c.One, c.DownloadRecipe)
+	fmt.Printf("%s %s\n", c.Two, c.ChooseDifferentRec)
+	fmt.Printf("%s %s\n", c.Three, c.PickDifferentIng)
+	fmt.Printf("%s %s\n", c.Four, c.About)
+	fmt.Printf("%s %s\n" +color.Reset, c.Five, c.Exit)
 
 	validInput := true
 	for validInput {
@@ -128,20 +128,20 @@ func NAVRecipe(mainIngredient string, recipeData RecipeData) {
 			ExitProgram()
 			validInput = false
 		default:
-			fmt.Println("Incorrect input, please try again")
+			fmt.Printf("%s\n", c.Incorrect)
 			validInput = true
 		}
 	}
 }
 
 func GetUserInput() {
-	fmt.Println("(Type number and press enter to make your selection.)")
+	fmt.Printf("%s\n", c.UserInputReq)
 	fmt.Scan(&UserInput)
 }
 
 func ExitProgram() {
 	fmt.Println(color.Red)
-	fmt.Println("*** EXITING RECIPE BOX ***")
+	fmt.Printf("%s\n", c.ExitingRecipeBox)
 	fmt.Println(color.Reset)
 	os.Exit(0)
 }
